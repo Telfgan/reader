@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Django Blog</title>
+</head>
+<body class="container mt-5">
+    <h1>Signup</h1>
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        <h2>Login</h2>
+        {{form.as_p}}
+        <input type="submit" value="Login" />
+    </form>
+</body>
+</html>
