@@ -30,4 +30,8 @@ class RegisterForm(UserCreationForm):
 class ImageForm(forms.ModelForm):
     class Meta:
         model = Image
-        fields = ('title', 'image')
+        title = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+        image = forms.ImageField(widget=forms.ImageField(attrs={'class':'form-control'}))
+
+        #fields = ('title', 'image')
+        fields = (title, image)
