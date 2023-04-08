@@ -11,12 +11,16 @@
     <title>Django</title>
 </head>
 
-<body class="container mt-5">
-    <form action='/create-user/' method='post'>
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit" />
-    </form>
+<body class="container h-100 d-flex justify-content-center align-content-center">
+    <div>
+        <h1>Регистрация</h1>
+
+        <form action='/create-user/' method='post'>
+            {% csrf_token %}
+            {{ form }}
+            <input class="btn btn-primary" type="submit" value="Submit" />
+        </form>
+    </div>
 </body>
 
 </html>

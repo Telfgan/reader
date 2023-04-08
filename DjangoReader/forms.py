@@ -13,11 +13,16 @@ class LoginForm(forms.Form):
 class RegisterForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['username', 'password1', 'password2']
+        username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+        password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}))
+        password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}))
+
+        #fields = ['username', 'password1', 'password2']
+        fields = [username, password1, password2]
 
     def clean_password2(self):
         cd = self.cleaned_data
-        if cd['password'] != cd['password2']:
+        if cd['password1'] != cd['password2']:
             raise forms.ValidationError('Passwords don\'t match.')
         return cd['password2']
 
