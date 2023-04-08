@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% load static %}
+     <link rel="stylesheet" type="text/css" href="{% static 'DjangoReader/css/bootstrap.css' %}"/>
+
+
+    <title>Django</title>
+</head>
+<body class="container mt-5">
+<form action='/create-user/' method='post'>
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
+

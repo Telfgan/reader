@@ -3,10 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Django Blog</title>
+
+    {% load static %}
+     <link rel="stylesheet" type="text/css" href="{% static 'DjangoReader/css/bootstrap.css' %}"/>
+
+
+    <title>Django</title>
 </head>
 <body class="container mt-5">
-    <h1>Signup</h1>
+<h1>Signup</h1>
     <form method="POST" novalidate>
         {% csrf_token %}
         <h2>Login</h2>

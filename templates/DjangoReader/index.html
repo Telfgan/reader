@@ -1,0 +1,52 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% load static %}
+     <link rel="stylesheet" type="text/css" href="{% static 'DjangoReader/css/bootstrap.css' %}"/>
+
+
+    <title>Django</title>
+</head>
+<body class="container mt-5">
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+   {{ form.as_p }}
+
+<label for="origin-language-name">C</label>
+<select name="origin_language_name" id="origin-language-name">
+    {% for key in query_results  %}
+<option value="{{key.name}}">{{key.name}}</option>
+    {% endfor %}
+</select>
+
+<label for="translate-language-name">на</label>
+<select name="translating_language_name" id="translate-language-name">
+    {% for key in query_results  %}
+<option value="{{key.name}}">{{key.name}}</option>
+    {% endfor %}
+</select>
+
+  <button type="submit">Upload</button>
+</form>
+
+
+<span>{{ translated }}</span>
+{% if img_obj %}
+  <h3>Succesfully uploaded : {{img_obj.title}}</h3>
+  <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+{% endif %}
+
+{%if request.user.is_authenticated %}
+<div>Авторизован</div>
+    {{request.user.username}}
+{%else%}
+<div>Не авторизован</div>
+{%endif%}
+</body>
+</html>
