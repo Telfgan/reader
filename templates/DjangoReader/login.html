@@ -1,22 +1,26 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     {% load static %}
-     <link rel="stylesheet" type="text/css" href="{% static 'DjangoReader/css/bootstrap.css' %}"/>
-
+    <link rel="stylesheet" type="text/css" href="{% static 'DjangoReader/css/bootstrap.css' %}" />
 
     <title>Django</title>
 </head>
-<body class="container mt-5">
-<h1>Signup</h1>
-    <form method="POST" novalidate>
-        {% csrf_token %}
-        <h2>Login</h2>
-        {{form.as_p}}
-        <input type="submit" value="Login" />
-    </form>
+
+<body class="container h-100 d-flex justify-content-center align-content-center">
+    <div>
+        <h1>Авторизация</h1>
+
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="btn btn-primary" type="submit" value="Войти" />
+        </form>
+    </div>
 </body>
+
 </html>

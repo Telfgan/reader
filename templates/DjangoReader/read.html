@@ -1,24 +1,27 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    {% load static %}
-     <link rel="stylesheet" type="text/css" href="{% static 'DjangoReader/css/bootstrap.css' %}"/>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'DjangoReader/css/bootstrap.css' %}" />
 
-
-    <title>Django</title>
+  <title>Django</title>
 </head>
-<body class="container mt-5">
 
+<body class="container">
+  <h2>Файл : {{img_obj.title}}</h2>
 
-
-<span>{{ translated }}</span>
-
-  <h3>Succesfully uploaded : {{img_obj.title}}</h3>
-  <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+  <div class="row">
+    <div class="col-8">
+      <span>{{ translated }}</span>
+    </div>
+    <div class="col-auto">
+      <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+    </div>
+  </div>
 </body>
+
 </html>
-
-
